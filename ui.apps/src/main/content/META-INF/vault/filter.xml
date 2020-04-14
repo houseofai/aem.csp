@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/apps/csp"/>
+    <filter root="/apps/granite" mode="merge"/>
+    <filter root="/apps/cq"/>
+    <filter root="/apps/wcm"/>
+    
+<!--     <filter root="/libs/granite" mode="merge"/> -->
+<!--     <filter root="/libs/cq" mode="merge"/> -->
+<!--     <filter root="/libs/granite/core/content/login/clientlib/resources/bg" mode="merge"/> -->
+<!--     <filter root="/libs/cq/core/content" mode="merge"/> -->
+</workspaceFilter>

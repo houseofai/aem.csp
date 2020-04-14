@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        jcr:primaryType="nt:unstructured"
+        jcr:title="AEM Sites | Edit Live Copy"
+        sling:resourceType="granite/ui/components/coral/foundation/page"
+        consoleId="cq-sites-livecopy-edit">
+        <head jcr:primaryType="nt:unstructured">
+            <viewport
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/admin/page/viewport"/>
+            <favicon
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/page/favicon"/>
+            <clientlibs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/includeclientlibs"
+                categories="[coralui3,granite.ui.coral.foundation,cq.siteadmin.admin.editlivecopy]"/>
+        </head>
+        <body
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/page/body">
+            <items jcr:primaryType="nt:unstructured">
+                <content
+                    granite:rel="cq-siteadmin-admin-editlivecopy-form"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/form"
+                    maximized="{Boolean}true"
+                    method="post"
+                    novalidate="{Boolean}true"
+                    style="vertical">
+                    <items jcr:primaryType="nt:unstructured">
+                        <wizard
+                            granite:rel="cq-siteadmin-admin-editlivecopy"
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Edit Live Copy"
+                            sling:resourceType="granite/ui/components/coral/foundation/wizard"
+                            cancelHref="${empty header.Referer ? granite:concat(&quot;/sites.html&quot;, granite:encodeURIPath(empty param.item ? requestPathInfo.suffix : param.item)) : header.Referer}">
+                            <items jcr:primaryType="nt:unstructured">
+                                <livecopyproperties
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Edit Live Copy"
+                                    sling:resourceType="granite/ui/components/coral/foundation/container">
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <fixedColumnContainer
+                                            granite:rel="cq-siteadmin-admin-editlivecopy-step-container"
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                            active="{Boolean}true"
+                                            margin="{Boolean}true"
+                                            maximized="{Boolean}true">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <fixedColumn
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <pathHidden
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/hidden"
+                                                            name="livecopy-path"
+                                                            value="${empty requestPathInfo.suffix ? param.item : requestPathInfo.suffix}"/>
+                                                        <livecopyfrom
+                                                            granite:rel="cq-siteadmin-admin-editlivecopy-from"
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                            disabled="{Boolean}true"
+                                                            fieldLabel="Live Copy from"
+                                                            name="msm:sourcePath"/>
+                                                        <livecopyinheritance
+                                                            granite:rel="cq-siteadmin-admin-editlivecopy-isdeep"
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                            checked="{Boolean}false"
+                                                            fieldDescription="If checked Live Copy configuration is effective on all children"
+                                                            name="msm:isDeep"
+                                                            text="Live Copy inheritance"
+                                                            value="true"/>
+                                                        <livecopysuspended
+                                                            granite:rel="cq-siteadmin-admin-editlivecopy-iscancelled"
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                            checked="{Boolean}false"
+                                                            name="msm:status/msm:isCancelled"
+                                                            text="Live Copy suspended"
+                                                            value="true"/>
+                                                        <childrensuspended
+                                                            granite:rel="cq-siteadmin-admin-editlivecopy-iscancelledforchildren"
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                            checked="{Boolean}false"
+                                                            name="msm:status/msm:isCancelledForChildren"
+                                                            text="Suspend for children pages"
+                                                            value="true"/>
+                                                        <livecopycancelledtext
+                                                            granite:rel="cq-siteadmin-admin-editlivecopy-cancelledtext"
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/text"
+                                                            text=""/>
+                                                        <resetconfig
+                                                            granite:rel="cq-siteadmin-admin-editlivecopy-resetconfig"
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/hidden"
+                                                            name="resetConfig"/>
+                                                        <actionconfigtext
+                                                            granite:rel="cq-siteadmin-admin-editlivecopy-actionconfig"
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="cq/gui/components/siteadmin/admin/editlivecopywizard/actionconfig"
+                                                            fieldLabel="Rollout Configs"
+                                                            html=""/>
+                                                        <rolloutconfigs
+                                                            granite:rel="cq-siteadmin-admin-editlivecopy-rolloutconfigs"
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                            emptyText="Select"
+                                                            fieldDescription="Select some optional Rollout Configs."
+                                                            fieldLabel="Note: Disabled actions are inherited from the blueprint and cannot be modified."
+                                                            multiple="{Boolean}true"
+                                                            name="cq:rolloutConfigs"
+                                                            translateOptions="{Boolean}[true]">
+                                                            <datasource
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="wcm/msm/components/datasources/rolloutconfig"/>
+                                                        </rolloutconfigs>
+                                                    </items>
+                                                </fixedColumn>
+                                            </items>
+                                        </fixedColumnContainer>
+                                    </items>
+                                    <parentConfig
+                                        jcr:primaryType="nt:unstructured"
+                                        validation="{Boolean}false">
+                                        <next
+                                            granite:class="foundation-wizard-control"
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/button"
+                                            text="Save"
+                                            type="submit"
+                                            variant="primary">
+                                            <granite:data
+                                                jcr:primaryType="nt:unstructured"
+                                                foundation-wizard-control-action="next"/>
+                                        </next>
+                                    </parentConfig>
+                                </livecopyproperties>
+                            </items>
+                        </wizard>
+                    </items>
+                </content>
+            </items>
+        </body>
+    </jcr:content>
+</jcr:root>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:rep="internal"
+    jcr:primaryType="nt:unstructured"
+    id="root">
+    <contentscience
+        jcr:mixinTypes="[rep:AccessControllable]"
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Content Science"
+        jcr:title_commentI18n="Capability Name"
+        desktopOnly="/siteadmin#"
+        desktopOnlyTitle="Classic UI"
+        href="/contentscience.html/content/csprojects"
+        icon="beaker"
+        id="cq-sites-pages-pages"
+        order="{Long}2000">
+        <rep:policy/>
+    </contentscience>
+    <tools
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Tools"
+        id="cq-tools"
+        order="{Long}200">
+    	<cloudservices
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Cloud Services"
+            id="cq-touch-cloudservices">
+    		<contentscience
+                jcr:description="Configure Content Science service"
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Content Science"
+                href="/mnt/overlay/csp/cloudservices/contentscience.html/conf"
+                icon="tableAndChart"
+                id="contentscience-cloud-configurations"/>
+        </cloudservices>
+    </tools>
+</jcr:root>

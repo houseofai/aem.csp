@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        jcr:primaryType="nt:unstructured"
+        jcr:title="AEM Sites | HTML Diff"
+        sling:resourceType="granite/ui/components/coral/foundation/page"
+        consoleId="cq-sites-pages-htmldiff">
+        <redirector
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/admin/contentchecker"
+            allowed="[.*]"
+            allowEmpty="{Boolean}false"
+            path="${requestPathInfo.suffix}"
+            redirectWhenEmpty="/sites.html/content"/>
+        <head jcr:primaryType="nt:unstructured">
+            <viewport
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/admin/page/viewport"/>
+            <meta
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/meta"
+                content="chrome=1"
+                name="X-UA-Compatible"/>
+            <favicon
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/page/favicon"/>
+            <clientlibs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/includeclientlibs"
+                categories="[cq.admin.htmldiff,coralui3,granite.ui.coral.foundation]"/>
+        </head>
+        <body
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/page/body">
+            <items jcr:primaryType="nt:unstructured">
+                <headerbar
+                    granite:class="diff-GlobalBar coral--dark"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/actionbar"
+                    cancelHref="${empty header.Referer ? granite:concat(granite:concat(param.editmode == null ? &quot;/sites.html&quot; : &quot;/editor.html&quot;, granite:encodeURIPath(empty param.item ? requestPathInfo.suffix : param.item)), param.editmode == null ? &quot;&quot; : &quot;.html&quot;) : header.Referer}">
+                    <primary jcr:primaryType="nt:unstructured">
+                        <targetpagetitle
+                            granite:class="diff-iframe-activator"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="cq/gui/components/common/admin/htmldiffcontent/title"
+                            hasVersion="${empty param.versionId ? false : true}"
+                            path="${requestPathInfo.suffix}"
+                            targetFrameId="DiffContentFrame"/>
+                        <sourcepagetitle
+                            granite:class="diff-iframe-activator ${param.sideBySide != null ? &quot;&quot; : &quot;hidden&quot;}"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="cq/gui/components/common/admin/htmldiffcontent/title"
+                            path="${empty param.item ? requestPathInfo.suffix : param.item}"
+                            targetFrameId="BaseContentFrame"
+                            versionId="${param.versionId}"/>
+                    </primary>
+                    <secondary jcr:primaryType="nt:unstructured">
+                        <close
+                            granite:class="diff-GlobalBar-close"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/anchorbutton"
+                            align="right"
+                            href="${empty header.Referer ? granite:concat(granite:concat(param.editmode == null ? &quot;/sites.html&quot; : &quot;/editor.html&quot;, granite:encodeURIPath(empty requestPathInfo.suffix ? param.item : requestPathInfo.suffix)), param.editmode == null ? &quot;&quot; : &quot;.html&quot;) : header.Referer}"
+                            text="Close"
+                            variant="quiet"
+                            x-cq-linkchecker="skip"/>
+                    </secondary>
+                </headerbar>
+                <difcontainer
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="cq/gui/components/common/admin/htmldiffcontent"
+                    diffDisabled="${param.diffDisabled != null ? &quot;true&quot; : &quot;false&quot;}"
+                    sideBySide="${param.sideBySide != null ? &quot;true&quot; : &quot;false&quot;}"
+                    sourcePath="${empty param.item ? requestPathInfo.suffix : param.item}"
+                    targetPath="${requestPathInfo.suffix}"
+                    versionId="${param.versionId}"/>
+            </items>
+        </body>
+    </jcr:content>
+</jcr:root>
