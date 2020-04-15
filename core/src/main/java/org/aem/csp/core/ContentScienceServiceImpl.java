@@ -25,4 +25,9 @@ public class ContentScienceServiceImpl implements ContentScienceService {
 	public String getUrl() {
 		return conf.url();
 	}
+
+	@Override
+	public String getToken() {
+		return conf.token();
+	}
 }
