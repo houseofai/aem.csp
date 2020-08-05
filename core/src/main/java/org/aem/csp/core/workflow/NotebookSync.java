@@ -26,6 +26,7 @@ public class NotebookSync implements WorkflowProcess {
 	@Override
 	public void execute(WorkItem item, WorkflowSession session, MetaDataMap args) throws WorkflowException {
 
+		log.info("### Launching Content Science Workflow");
 		ResourceResolver resourceResolver = session.adaptTo(ResourceResolver.class);
 
 		String path = item.getWorkflowData().getPayload().toString();
@@ -33,6 +34,7 @@ public class NotebookSync implements WorkflowProcess {
 		Page page = resource.adaptTo(Page.class);
 		
 		String name = page.getName();
+		log.info("### Creating page "+name);
 		
 		try {
 			nbm.create("", name);

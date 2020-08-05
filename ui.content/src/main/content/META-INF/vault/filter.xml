@@ -2,4 +2,6 @@
 <workspaceFilter version="1.0">
     <filter root="/conf/csp" mode="merge"/>
     <filter root="/content/csprojects"/>
+    <filter root="/conf/global/settings/workflow/models/content-science-sync"/>
+    <filter root="/var/workflow/models/content-science-sync"/>
 </workspaceFilter>

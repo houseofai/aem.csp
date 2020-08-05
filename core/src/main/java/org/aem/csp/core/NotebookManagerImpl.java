@@ -40,12 +40,12 @@ public class NotebookManagerImpl implements NotebookManager {
 		JSONObject params = new JSONObject();
 		params.put("type", "notebook");
 		post.setEntity(new StringEntity(params.toString(), StandardCharsets.UTF_8));
-		
+
 		HttpResponse response = client.execute(post);
 		
 		HttpEntity entity = response.getEntity();
 		String content = EntityUtils.toString(entity);
-		
+
 		JSONObject json_response = new JSONObject(content);
 		String oldNbName = json_response.getString("name");
 		
@@ -65,7 +65,7 @@ public class NotebookManagerImpl implements NotebookManager {
 		
 		HttpResponse response = client.execute(patch);
 	}
-	
+
 	private String getFullUrl(String path) {
 		return getBaseUrl()+path+"?"+getTokenParam();
 	}
