@@ -1,6 +1,6 @@
 from aempy import AEMContentsManager
 # Configuration file for jupyter-notebook.
-
+c = get_config()
 #c.JupyterHub.tornado_settings = {'headers': {'Content-Security-Policy': 'frame-ancestors self http://localhost:4502',}}
 #c.Spawner.args = ['--NotebookApp.tornado_settings={ 'headers':{ 'Content-Security-Policy': 'frame-ancestors self http://localhost:4502',}}']
 
@@ -113,7 +113,7 @@ c.NotebookApp.allow_remote_access = True
 #c.NotebookApp.config_manager_class = 'notebook.services.config.manager.ConfigManager'
 
 ## The notebook manager class to use.
-#c.NotebookApp.contents_manager_class = 'notebook.services.contents.largefilemanager.LargeFileManager'
+c.NotebookApp.contents_manager_class = AEMContentsManager
 
 ## Extra keyword arguments to pass to `set_secure_cookie`. See tornado's
 #  set_secure_cookie docs for details.

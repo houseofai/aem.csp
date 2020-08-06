@@ -4,6 +4,6 @@
     <jcr:content
         cq:template="/conf/csp/settings/wcm/templates/page-content"
         jcr:primaryType="cq:PageContent"
-        sling:resourceType="csp/components/notebook">
+        sling:resourceType="csp/components/notebook>
     </jcr:content>
 </jcr:root>
