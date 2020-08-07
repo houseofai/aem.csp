@@ -1,4 +1,4 @@
-from aempy import AEMContentsManager
+from aempy.csp import AEMContentsManager
 # Configuration file for jupyter-notebook.
 c = get_config()
 #c.JupyterHub.tornado_settings = {'headers': {'Content-Security-Policy': 'frame-ancestors self http://localhost:4502',}}
