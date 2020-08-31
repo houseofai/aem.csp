@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2020-08-07T16:47:25.927+02:00"
+        cq:lastModifiedBy="admin"
+        cq:template="/conf/csp/settings/wcm/templates/page-content"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="AEMpy Basics"
+        sling:resourceType="csp/components/notebook"
+        content="\{&#xa; &quot;cells&quot;: [&#xa;  {&#xa;   &quot;cell_type&quot;: &quot;code&quot;,&#xa;   &quot;execution_count&quot;: 1,&#xa;   &quot;metadata&quot;: {&#xa;    &quot;ExecuteTime&quot;: {&#xa;     &quot;end_time&quot;: &quot;2020-08-07T12:48:12.632714Z&quot;,&#xa;     &quot;start_time&quot;: &quot;2020-08-07T12:48:12.580499Z&quot;&#xa;    }&#xa;   },&#xa;   &quot;outputs&quot;: [],&#xa;   &quot;source&quot;: [&#xa;    &quot;%load_ext autoreload\\n&quot;,&#xa;    &quot;%autoreload 2&quot;&#xa;   ]&#xa;  },&#xa;  {&#xa;   &quot;cell_type&quot;: &quot;code&quot;,&#xa;   &quot;execution_count&quot;: 76,&#xa;   &quot;metadata&quot;: {&#xa;    &quot;ExecuteTime&quot;: {&#xa;     &quot;end_time&quot;: &quot;2020-08-07T13:44:54.949503Z&quot;,&#xa;     &quot;start_time&quot;: &quot;2020-08-07T13:44:54.875863Z&quot;&#xa;    }&#xa;   },&#xa;   &quot;outputs&quot;: [],&#xa;   &quot;source&quot;: [&#xa;    &quot;from aempy import aem as cq\\n&quot;,&#xa;    &quot;import pandas as pd\\n&quot;,&#xa;    &quot;import seaborn as sns\\n&quot;,&#xa;    &quot;import pandas as pd\\n&quot;,&#xa;    &quot;import matplotlib.pyplot as plt&quot;&#xa;   ]&#xa;  },&#xa;  {&#xa;   &quot;cell_type&quot;: &quot;markdown&quot;,&#xa;   &quot;metadata&quot;: {},&#xa;   &quot;source&quot;: [&#xa;    &quot;"/>
+</jcr:root>
