@@ -114,6 +114,10 @@ c.NotebookApp.allow_remote_access = True
 
 ## The notebook manager class to use.
 c.NotebookApp.contents_manager_class = AEMContentsManager
+c.NotebookApp.contents_manager_class.aemurl = "localhost"
+c.NotebookApp.contents_manager_class.aemport = "4502"
+c.NotebookApp.contents_manager_class.aemuser = "admin"
+c.NotebookApp.contents_manager_class.aempwd = "admin"
 
 ## Extra keyword arguments to pass to `set_secure_cookie`. See tornado's
 #  set_secure_cookie docs for details.
